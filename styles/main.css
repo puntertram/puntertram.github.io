@@ -229,6 +229,10 @@ background: #3299FF
         display: block;
     }
 
+    .index-horizontal-bar-container {
+      display: block;
+    }
+
 }
 
 @media only screen and (min-width: 990px) {
@@ -238,6 +242,9 @@ background: #3299FF
 
     .contact-me-horizontal-bar-container {
         display: none;
+    }
+    .index-horizontal-bar-container {
+      display: none;
     }
 
 }
