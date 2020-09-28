@@ -37,7 +37,7 @@ body {
 .app-body-container {
     padding-left: 30%;
     padding-right: 30%;
-    padding-top: 50px;
+    padding-top: 70px;
 }
 
 /* ContactMeHorizontalBar.css */
@@ -45,10 +45,10 @@ body {
 .contact-me-horizontal-bar-container {
     position: absolute;
     top: 80px;
-    left: 40%;
+    left: 12%;
+    right: 12%;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 28%;
     height: 50px;
     /* border: 1px solid black; */
     box-shadow: silver;
@@ -167,24 +167,77 @@ font-size: 40px;
 background: #3299FF
 }
 
+
+/* Index Horizontal Bar */
+.index-horizontal-bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    box-shadow: silver;
+    border-top: 2px solid #0026ca;
+    background-color: #304ffe;
+}
+
+.index-icon {
+    /* position: relative; */
+    float:left;
+    width: 33%;
+    height: inherit;
+}
+
+.index-icon:hover {
+    background-color: #0026ca;
+}
+
+.index-icon i {
+    position: relative;
+    left: 38%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* #portfolio-icon i {
+  position: relative;
+  left: 30%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px;
+  color: white;
+}
+
+#blog-icon i {
+  position: relative;
+  left: 30%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px;
+  color: white;
+} */
+
 @media only screen and (max-width: 990px) {
     #contact-me-sidebar-social {
-        display: block;
+        display: none;
     }
 
     .contact-me-horizontal-bar-container {
-        display: none;
+        display: block;
     }
 
 }
 
 @media only screen and (min-width: 990px) {
     #contact-me-sidebar-social {
-        display: none;
+        display: block;
     }
 
     .contact-me-horizontal-bar-container {
-        display: block;
+        display: none;
     }
 
 }
