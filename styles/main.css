@@ -89,7 +89,7 @@ body {
 
 #contact-me-sidebar-social{
     /* border: 1px solid black; */
-    height: 170px;
+    height: 240px;
     width: 55px;
     position: fixed;
     top: 25%;
@@ -104,7 +104,7 @@ body {
   #contact-me-sidebar-social ul li{
   /*   border: 1px solid black; */
     margin-left: 1%;
-    height: 55px;
+    height: 60px;
     width: 100%;
     position:relative;
     transition: width .3s;
@@ -219,6 +219,48 @@ background: #3299FF
   font-size: 30px;
   color: white;
 } */
+
+#index-sidebar {
+  /* border: 1px solid black; */
+  height: 240px;
+  width: 55px;
+  position: fixed;
+  top: 25%;
+  right: 0;
+  z-index: 10;
+  background-color: #304ffe;
+}
+
+#index-sidebar ul li{
+  /*   border: 1px solid black; */
+  margin-right: 1%;
+  height: 80px;
+  width: 100%;
+  position:relative;
+  transition: width .3s;
+  opacity: 0.3;
+}
+
+#index-sidebar ul li:hover{
+  /* width: 150%; */
+  opacity:1;
+}
+
+
+#index-sidebar ul a{
+  text-decoration: none;
+  color: white;
+/*   position: relative; */
+}
+
+.index-sidebar-icon i {
+  font-size: 35px;
+  position: relative;
+  left: 25%;
+  margin-top: 8px;
+  margin-bottom: 8px;;
+}
+
 
 @media only screen and (max-width: 990px) {
     #contact-me-sidebar-social {
