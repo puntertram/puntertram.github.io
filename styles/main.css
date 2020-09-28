@@ -275,6 +275,10 @@ background: #3299FF
       display: block;
     }
 
+    #index-sidebar {
+      display:none;
+    }
+
 }
 
 @media only screen and (min-width: 990px) {
@@ -288,5 +292,7 @@ background: #3299FF
     .index-horizontal-bar-container {
       display: none;
     }
-
+    #index-sidebar {
+      display: block;
+    }
 }
