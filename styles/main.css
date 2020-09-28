@@ -146,24 +146,45 @@ body {
     right: 10px;
   }
   
-  #contact-me-sidebar-instagram-icon div{
-    right: 10px;
-  }
-  .contact-me-sidebar-social-icon{
-    position: absolute;
-  /*   border: 1px solid black; */
-    width: 40px;
-    height: 40px;
-    top: 7px;
-  }
-  .contact-me-sidebar-social-icon span i{
-    font-size: 40px;
-  /*   border: 1px solid black; */
-  /*   position: absolute; */
-    
-  }
-  
-  #contact-me-sidebar-twitter-icon{
-    background: #3299FF
-  }
+#contact-me-sidebar-instagram-icon div{
+right: 10px;
+}
+.contact-me-sidebar-social-icon{
+position: absolute;
+/*   border: 1px solid black; */
+width: 40px;
+height: 40px;
+top: 7px;
+}
+.contact-me-sidebar-social-icon span i{
+font-size: 40px;
+/*   border: 1px solid black; */
+/*   position: absolute; */
 
+}
+  
+#contact-me-sidebar-twitter-icon{
+background: #3299FF
+}
+
+@media only screen and (max-width: 990px) {
+    #contact-me-sidebar-social {
+        display: block;
+    }
+
+    .contact-me-horizontal-bar-container {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 990px) {
+    #contact-me-sidebar-social {
+        display: none;
+    }
+
+    .contact-me-horizontal-bar-container {
+        display: block;
+    }
+
+}
