@@ -202,63 +202,44 @@ background: #3299FF
     margin-top: 10px;
 }
 
-/* #portfolio-icon i {
-  position: relative;
-  left: 30%;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 30px;
-  color: white;
-}
-
-#blog-icon i {
-  position: relative;
-  left: 30%;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 30px;
-  color: white;
-} */
-
 #index-sidebar {
-  /* border: 1px solid black; */
+  direction: rtl;
   height: 240px;
   width: 55px;
   position: fixed;
   top: 25%;
   right: 0;
   z-index: 10;
+}
+
+#index-sidebar item > a > div > div {
+  margin-right: 1%;
+  direction: ltr;
+  height: 80px;
+  width: 100%;
+  transition: width .3s;
+  opacity: 0.3;
   background-color: #304ffe;
 }
 
-#index-sidebar ul li{
-  /*   border: 1px solid black; */
-  margin-right: 1%;
-  height: 80px;
-  width: 100%;
-  position:relative;
-  transition: width .3s;
-  opacity: 0.3;
-}
-
-#index-sidebar ul li:hover{
-  /* width: 150%; */
+#index-sidebar item > a > div > div:hover{
+  width: 150%;
   opacity:1;
 }
 
 
-#index-sidebar ul a{
+#index-sidebar item a{
   text-decoration: none;
   color: white;
-/*   position: relative; */
 }
 
 .index-sidebar-icon i {
-  font-size: 35px;
+  font-size: 37px;
   position: relative;
   left: 25%;
+  line-height: 60px;
   margin-top: 8px;
-  margin-bottom: 8px;;
+  margin-bottom: 8px;
 }
 
 
