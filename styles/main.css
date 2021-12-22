@@ -80,6 +80,19 @@ body {
 }
 
 
+.app-body-container-tile {
+  padding-top: 5px;
+  padding-bottom: 25px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.app-body-container-tile-body {
+  padding-top: 15px;
+}
+.app-body-container-tile-heading {
+
+}
+
 
 
 /* ContactMeHorizontalBar.css */
@@ -107,16 +120,16 @@ body {
     border-radius: 10px;
 }
 
-#facebook-icon{
-    background: #4868ad;
+#github-icon{
+    background: black;
 }
   
 #linkedin-icon{
     background: #0077b5;
 }
 
-#instagram-icon{
-    background: radial-gradient(circle at 25% 110%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%),radial-gradient(circle at 25% 110%,#b9a800 0,#938500 5%,#b10f00 45%,#8c0061 60%,#002ca9 90%);
+#email-icon{
+    background: blue;
 }
 
 #twitter-icon{
@@ -164,19 +177,19 @@ body {
     color: white;
   /*   position: relative; */
   }
-  #contact-me-sidebar-facebook-icon{
-    background: #4868ad;
+  #contact-me-sidebar-github-icon{
+    background: black;
   }
   
   #contact-me-sidebar-linkedin-icon{
     background: #0077b5;
   }
   
-  #contact-me-sidebar-instagram-icon{
-    background: radial-gradient(circle at 25% 110%,#fdf497 0,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%),radial-gradient(circle at 25% 110%,#b9a800 0,#938500 5%,#b10f00 45%,#8c0061 60%,#002ca9 90%);
+  #contact-me-sidebar-email-icon{
+    background: blue;
   }
   
-  #contact-me-sidebar-facebook-icon div{
+  #contact-me-sidebar-github-icon div{
     right: 5px;
   }
   
@@ -188,7 +201,7 @@ body {
     right: 10px;
   }
   
-#contact-me-sidebar-instagram-icon div{
+#contact-me-sidebar-email-icon div{
 right: 10px;
 }
 .contact-me-sidebar-social-icon{
