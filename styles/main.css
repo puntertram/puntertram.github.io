@@ -74,7 +74,7 @@ body {
 
   .app-body-heading-center {
     font-family: 'Arapey';
-    font-size: 25px;
+    font-size: 35px;
     text-align: center;
   }
 }
@@ -90,7 +90,7 @@ body {
   padding-top: 15px;
 }
 .app-body-container-tile-heading {
-
+  font-size: 25px;
 }
 
 

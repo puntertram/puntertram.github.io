@@ -22,71 +22,56 @@
             <!-- App Body -->
             <div class="app-body-container">
                 <div class="app-body-heading-center">
-                    Blog
+                    Effortless Remote Storage Access: Bypassing the hassle of short lived STS Tokens
                 </div>
                 
                 <div class="app-body-container-tile">
                     <!-- Data Structures And Algorithms topics -->
                     <div class="app-body-container-tile-heading">
-                        Data Structures And Algorithms
+                        <b>Problem Statement</b>
                     </div>
                     <div class="app-body-container-tile-body">
-                        <ol>
-                            <li><a href="/intersecting-segments-in-a-ring.html">Intersecting segments in a ring</a></li>
-                        </ol>
+                        In modern cloud-based applications, accessing resources like files from Object Storage Services (OSS) is a common task. Many applications use temporary credentials for accessing such services, such as Security Token Service (STS) tokens. These tokens, however, have a limited lifespan.
+
+                        In our specific use case, we are working with an application that needs to download files from an OSS bucket. The application uses STS tokens to authenticate and access the bucket. However, these tokens are short-lived, and once the token expires, any further attempts to download files from the OSS bucket fail.
+                        <br>
+                        <br>
+                        The challenge arises when the application still needs to access files after the STS token has expired. This situation creates an operational roadblock, as the application must explicitly request a new set of STS credentials to continue interacting with the OSS bucket. While this behavior is expected, it can be cumbersome, especially if the application needs to perform continuous file downloads over an extended period.
+                        <br>
+                        <br>
+                        Ideally, we wanted a seamless solution that would allow the application to continue functioning smoothly beyond the expiration of the STS token without requiring users to manually handle the token renewal process. The goal was to automate the renewal process transparently without altering the application's core logic or requiring extra code from the user.
+                    </div>
+                </div>
+
+                <div class="app-body-container-tile">
+                    <!-- Data Structures And Algorithms topics -->
+                    <div class="app-body-container-tile-heading">
+                        <b>Background</b>
+                    </div>
+                    <div class="app-body-container-tile-body">
+                        Before diving into the solution, it's important to understand the foundational concepts that led to the problem and ultimately paved the way for the solution.
+
+                        <br>
+                        <br>
+                        <b>Security Token Service (STS)</b>: STS is a service provided by cloud providers (such as AWS, Azure, etc.) to issue temporary security credentials that are used to access resources. These temporary credentials typically consist of an access key, secret key, and a session token, and they come with an expiration time. When an application requests these credentials, it receives a short-lived token, and once the token expires, the application can no longer access the resources unless it requests new credentials.
+                        <br>
+                        <br>
+                        <b>Object Storage Services (OSS)</b>: Object Storage Services are scalable storage solutions that allow applications to store and retrieve data in the cloud. Examples include AWS S3, Google Cloud Storage, and Azure Blob Storage. These services often require authentication mechanisms to securely control access to the stored data. When using temporary credentials, the STS token is used to authenticate and authorize the application's requests to these services.
+
+                        <br>
+                        <br>
+                        The Challenge of Expiration: Given the short-lived nature of STS credentials, one of the inherent challenges is token expiration. When a token expires, the application loses access to the resources it was using, leading to failures in subsequent operations (such as downloading files). If the application needs to perform multiple download operations over an extended period, it becomes necessary to handle token renewal.
+
+                        <br>
+                        <br>
+                        While token renewal is possible, the process often requires manually requesting a new set of credentials, which can introduce friction in user experience and result in additional operational complexity.
                     </div>
                 </div>
                 
-                <div class="app-body-container-tile">
-                    <!-- Computer Graphics And Visualisation topics -->
-                    <div class="app-body-container-tile-heading">
-                        Computer Graphics And Visualisation
-                    </div>
-
-                    <div class="app-body-container-tile-body">
-                        <ol>
-                            <li><a href="/intersecting-segments-in-a-ring.html">Frame Buffer</a></li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="app-body-container-tile">
-                    <!-- Computer Architecture -->
-                    <div class="app-body-container-tile-heading">
-                        Computer Architecture
-                    </div>
-                    <div class="app-body-container-tile-body">
-                        <ol>
-                            <li><a href="/intersecting-segments-in-a-ring.html">Virtual Memory</a></li>
-                        </ol>
-                    </div>
-                </div>
-                
-                <div class="app-body-container-tile">
-                    <!-- Linear Algebra And Probability -->
-                    <div class="app-body-container-tile-heading">
-                        Linear Algebra And Probability
-                    </div>
-                    <div class="app-body-container-tile-body">
-                        <ol>
-                            <li><a href="/intersecting-segments-in-a-ring.html">Problem 1</a></li>
-                        </ol>
-                    </div>
-                </div>
-
-                <div class="app-body-container-tile">
-                    <!-- Miscellanious -->
-                    <div class="app-body-container-tile-heading">
-                        Miscellanious
-                    </div>
-                    <div class="app-body-container-tile-body">
-                        <ol>
-                            <li><a href="/effortless-remote-storage-access.html">Effortless Remote Storage Access</a></li>
-                        </ol>
-                    </div>
-                </div>
                 <!--  -->
             </div>
+
+            
 
             <!-- ContactMeHorizontalBar -->
             <div class="contact-me-horizontal-bar-container">
