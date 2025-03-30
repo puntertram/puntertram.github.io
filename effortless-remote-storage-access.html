@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="styles/main.css"> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- Highlight.js Theme (Choose one) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+          
+          
     </head>
     <body>
         <div>
@@ -66,6 +70,68 @@
                         <br>
                         While token renewal is possible, the process often requires manually requesting a new set of credentials, which can introduce friction in user experience and result in additional operational complexity.
                     </div>
+                </div>
+
+                <div class="app-body-container-tile">
+                    <div class="app-body-container-tile-heading">
+                        <b>The Solution</b>
+                    </div>
+                    <div class="app-body-container-tile-body">
+                        <div class="app-body-container-tile-sub-heading-two">
+                            <b>Before</b>
+                        </div>
+                        The usual process of accessing a file in an OSS bucket is the following:
+                        <ol>
+                            <li> Get STS token by authenticating with the right role</li>
+                            <li> Use the STS token to instantiate an OSS Bucket instance as follows:
+                                <br>
+                                <div>
+                                    <pre>
+                                    <code class="language-python">
+                                        bucket = oss2.Bucket(credentials, endpoint, "my_favourite_bucket")
+                                        for object in oss2.ObjectIterator(bucket):
+                                            # Download the file 
+                                            file_path = "my/favourite/path"
+                                            bucket.get_object_to_file(object.key, file_path)
+                                    </code>
+                                    </pre>
+                                </div>
+                                Simple, is it not 😅? But there are problems! You see, the bucket instance held by the variable bucket in the snippet above is like a gate pass that we have access to the object remote storage(OSS in this case).We can access the remote storage only as long as the gate pass is valid, post that if we try to use the gate pass to try to download a file from the remote storage, we face permission issues! Now that womps! 
+                                Ideally, as a consumer, I would want this code to work and not fail for reasons like expired STS credentials!
+                                <br>
+                            </li>
+                        </ol>
+                        <div class="app-body-container-tile-sub-heading-two">
+                            <b>After</b>
+                        </div>
+                        We have seen the problems of the above style of accessing objects from a remote store. Now, the above code snippet in terms of expressability is quite concise. All we need is a bucket instance, and a for loop to iterate through the objects in the remote storage, sweeet! Only if we had a way to renew the gate pass without letting the consumer take the burden of the same. 
+                        <br>
+                        <br>
+                        So as a consumer, the way I express to read through all the objects in a remote storage remains the same, plus I don't need to worry about an invalid bucket instance because of expired STS credentials! Isn't that convenient? This is the intent of the solution I will be presenting below
+                        <br>
+                        <br>
+                        Here is a brief overview of the solution:
+                        <br>
+                        <ul>
+                            <li> We plan to extend the functionality of the ObjectIterator that oss2 library provides us</li>
+                            <li> We would call a special class called OSSClient, which is tasked with providing a bucket instance with a valid gate pass at all times</li>
+                        </ul>
+                        <br>
+                        <div class="container">
+                            <img src="images/oss-image-one.svg" alt="My SVG">
+                        </div>
+                        
+
+                    </div>
+                </div>
+                
+                <div class="app-body-container-tile">
+                    <div class="app-body-container-tile-heading">
+                        <b>References</b>
+                    </div>
+                    <ul>
+                        <li><a href="https://github.com/aliyun/aliyun-oss-python-sdk/blob/master/oss2/iterators.py">ObjectIterator Implementation aliyun-oss-sdk</a></li>
+                    </ul>
                 </div>
                 
                 <!--  -->
@@ -153,5 +219,13 @@
             </div>
         </div>
         <script src="scripts/main.js"></script>
+        <script src="https://unpkg.com/monaco-editor@0.43.0/min/vs/loader.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+
+        <script>hljs.highlightAll();</script>
     </body>
 </html>
